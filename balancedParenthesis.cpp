@@ -14,7 +14,7 @@ bool isValid(string s)
         {
             st.push(s[i]);
         }
-        else if (s[i] == ')')
+        else if (!st.empty() && s[i] == ')')
         {
             if (st.top() == '(')
             {
@@ -26,7 +26,7 @@ bool isValid(string s)
                 break;
             }
         }
-        else if (s[i] == '}')
+        else if (!st.empty() && s[i] == '}')
         {
             if (st.top() == '{')
             {
@@ -38,7 +38,7 @@ bool isValid(string s)
                 break;
             }
         }
-        else if (s[i] == ']')
+        else if (!st.empty() && s[i] == ']')
         {
             if (st.top() == '[')
             {
@@ -50,6 +50,11 @@ bool isValid(string s)
                 break;
             }
         }
+    }
+
+    if (!st.empty()) // Check if the stack is not empty after processing the entire string
+    {
+        ans = false;
     }
 
     return ans;
