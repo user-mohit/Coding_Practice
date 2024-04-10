@@ -14,6 +14,10 @@ bool isValid(string s)
         {
             st.push(s[i]);
         }
+            if(st.empty())
+            {
+                return false;
+            }
         else if (!st.empty() && s[i] == ')')
         {
             if (st.top() == '(')
