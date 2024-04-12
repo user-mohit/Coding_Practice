@@ -16,7 +16,7 @@ public:
         back = -1;
     }
 
-    void push(int val)
+    void enqueue(int val)
     {
         if (back == n - 1)
         {
@@ -32,11 +32,11 @@ public:
         }
     }
 
-    void pop()
+    void dequeue()
     {
         if (front == -1 || front > back)
         {
-            cout << "No element to pop." << endl;
+            cout << "No element to dequeue." << endl;
             return;
         }
         front++;
@@ -68,30 +68,30 @@ public:
 int main()
 {
     queue q;
-    q.push(1);
-    q.push(2);
-    q.push(3);
-    q.push(4);
-    q.push(5);
-    q.push(6);
-    q.push(7);
+    q.enqueue(1);
+    q.enqueue(2);
+    q.enqueue(3);
+    q.enqueue(4);
+    q.enqueue(5);
+    q.enqueue(6);
+    q.enqueue(7);
 
     q.peek();
-    q.pop();
+    q.dequeue();
     q.peek();
-    q.pop();
+    q.dequeue();
     q.peek();
-    q.pop();
+    q.dequeue();
     q.peek();
-    q.pop();
+    q.dequeue();
     q.peek();
-    q.pop();
+    q.dequeue();
     q.peek();
-    q.pop();
+    q.dequeue();
     q.peek();
-    q.pop();
+    q.dequeue();
     q.peek();
-    q.pop();
+    q.dequeue();
 
     cout << q.isEmpty() << endl;
 
